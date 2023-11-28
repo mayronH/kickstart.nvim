@@ -185,6 +185,64 @@ require('lazy').setup({
     },
   },
 
+  -- {
+  --   -- Sidebar File Tree
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v3.x",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+  --   },
+  --   opts = {
+  --     window = {
+  --       width = 30,
+  --       mappings = {
+  --         ["o"] = "open",
+  --       },
+  --     }
+  --   }
+  -- },
+
+  {
+
+		"nvim-tree/nvim-tree.lua",
+    cmd = { "NvimTreeToggle", "NvimTreeFocus" },
+    opts = {
+			disable_netrw = true,
+			hijack_netrw = true,
+			open_on_tab = false,
+			hijack_cursor = true,
+			hijack_unnamed_buffer_when_opening = false,
+			update_cwd = true,
+			update_focused_file = {
+				enable = true,
+				update_cwd = false,
+			},
+			sync_root_with_cwd = true,
+			view = {
+				preserve_window_proportions = true,
+				-- width = 20,
+				hide_root_folder = false,
+			},
+			git = {
+				enable = false,
+				ignore = true,
+			},
+			actions = {
+				open_file = {
+					resize_window = true,
+				},
+			},
+			renderer = {
+				indent_markers = {
+					enable = false,
+				},
+			},
+		},
+  },
+
   {
     -- Add indentation guides even on blank lines
     'lukas-reineke/indent-blankline.nvim',
@@ -298,6 +356,8 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
