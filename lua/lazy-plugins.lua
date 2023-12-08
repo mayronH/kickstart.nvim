@@ -43,6 +43,7 @@ require('lazy').setup({
 
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-path',
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
@@ -159,40 +160,6 @@ require('lazy').setup({
     },
   },
 
-
-
-  {
-    "akinsho/bufferline.nvim",
-    opts = {
-      options = {
-      	max_name_length = 20,
-		  	max_prefix_length = 13,
-		  	tab_size = 20,
-		  	color_icons = true,
-		  	show_buffer_icons = true,
-		  	show_buffer_close_icons = true,
-			  show_close_icon = true,
-			  show_tab_indicators = true,
-			  enforce_regular_tabs = false,
-			  persist_buffer_sort = true,
-			  always_show_bufferline = true,
-			  separator_style = "thin",
-        offsets = {
-				  {
-					  filetype = "NvimTree",
-					  text = "File Explorer",
-					  text_align = "center",
-					  padding = 0,
-				  },
-			  },
-      },
-    },
-  },
-
-  {
-    "ojroques/nvim-bufdel"
-  },
-
   {
 
 		"nvim-tree/nvim-tree.lua",
@@ -288,6 +255,38 @@ require('lazy').setup({
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
+  },
+
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+      	max_name_length = 20,
+		  	max_prefix_length = 13,
+		  	tab_size = 20,
+		  	color_icons = true,
+		  	show_buffer_icons = true,
+		  	show_buffer_close_icons = true,
+			  show_close_icon = true,
+			  show_tab_indicators = true,
+			  enforce_regular_tabs = false,
+			  persist_buffer_sort = true,
+			  always_show_bufferline = true,
+			  separator_style = "thin",
+        offsets = {
+				  {
+					  filetype = "NvimTree",
+					  text = "File Explorer",
+					  text_align = "center",
+					  padding = 0,
+				  },
+			  },
+      },
+    },
+  },
+
+  {
+    "ojroques/nvim-bufdel"
   },
 
   {
