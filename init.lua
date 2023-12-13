@@ -206,17 +206,48 @@ require('lazy').setup({
   -- },
 
   {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+      	max_name_length = 20,
+		  	max_prefix_length = 13,
+		  	tab_size = 20,
+		  	color_icons = true,
+		  	show_buffer_icons = true,
+		  	show_buffer_close_icons = true,
+			  show_close_icon = true,
+			  show_tab_indicators = true,
+			  enforce_regular_tabs = false,
+			  persist_buffer_sort = true,
+			  always_show_bufferline = true,
+			  separator_style = "thin",
+        offsets = {
+				  {
+					  filetype = "NvimTree",
+					  text = "File Explorer",
+					  text_align = "center",
+					  padding = 0,
+				  },
+			  },
+      },
+    },
+  },
+
+  {
+    "ojroques/nvim-bufdel"
+  },
+
+  {
 
 		"nvim-tree/nvim-tree.lua",
     dependencies = {'nvim-tree/nvim-web-devicons'},
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = {
-			disable_netrw = true,
+			disable_netrw = false,
 			hijack_netrw = true,
 			open_on_tab = false,
 			hijack_cursor = true,
-			hijack_unnamed_buffer_when_opening = false,
-			update_cwd = true,
+			hijack_unnamed_buffer_when_opening = true,
 			update_focused_file = {
 				enable = true,
 				update_cwd = false,
@@ -238,8 +269,25 @@ require('lazy').setup({
 			},
 			renderer = {
 				indent_markers = {
-					enable = false,
+          enable = true,
+				  icons = {
+					  corner = "└ ",
+					  edge = "│ ",
+					  item = "│ ",
+					  none = "  ",
+				  },
 				},
+        icons = {
+				  webdev_colors = true,
+				  git_placement = "after",
+			  	show = {
+					  file = true,
+				  	folder = true,
+					  folder_arrow = true,
+				  	git = true,
+				  },
+			  	padding = " ",
+        },
 			},
 		},
   },
@@ -360,6 +408,9 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>')
 vim.keymap.set('n', 'zz', ':update<CR>')
+vim.keymap.set('n', '<A-j>', '<Cmd>BufferLineCyclePrev<CR>')
+vim.keymap.set('n', '<A-k>', '<Cmd>BufferLineCycleNext<CR>')
+vim.keymap.set('n', '<A-q>', '<Cmd>BufDel<CR>')
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
