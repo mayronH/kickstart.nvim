@@ -62,7 +62,7 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -138,15 +138,15 @@ require('lazy').setup({
     },
   },
 
-  { 
-    "catppuccin/nvim", 
+  {
+    "catppuccin/nvim",
     priority = 1000,
     lazy = false,
     config = function()
       vim.cmd.colorscheme 'catppuccin'
     end,
     opts = {
-      flavour = "mocha", 
+      flavour = "mocha",
       term_colors = true,
     }
   },
@@ -209,83 +209,83 @@ require('lazy').setup({
 
   {
 
-		"nvim-tree/nvim-tree.lua",
-    dependencies = {'nvim-tree/nvim-web-devicons'},
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     opts = {
-			disable_netrw = false,
-			hijack_netrw = true,
-			open_on_tab = false,
-			hijack_cursor = true,
-			hijack_unnamed_buffer_when_opening = true,
-			update_focused_file = {
-				enable = true,
-				update_cwd = false,
-			},
-			sync_root_with_cwd = true,
-			view = {
-				preserve_window_proportions = true,
-				-- width = 20,
-				-- hide_root_folder = false,
-			},
-			git = {
-				enable = false,
-				ignore = true,
-			},
-			actions = {
-				open_file = {
-					resize_window = true,
-				},
-			},
-			renderer = {
-				indent_markers = {
-          enable = true,
-				  icons = {
-					  corner = "└ ",
-					  edge = "│ ",
-					  item = "│ ",
-					  none = "  ",
-				  },
-				},
-        icons = {
-				  webdev_colors = true,
-				  git_placement = "after",
-			  	show = {
-					  file = true,
-				  	folder = true,
-					  folder_arrow = true,
-				  	git = true,
-				  },
-			  	padding = " ",
+      disable_netrw = false,
+      hijack_netrw = true,
+      open_on_tab = false,
+      hijack_cursor = true,
+      hijack_unnamed_buffer_when_opening = true,
+      update_focused_file = {
+        enable = true,
+        update_cwd = false,
+      },
+      sync_root_with_cwd = true,
+      view = {
+        preserve_window_proportions = true,
+        -- width = 20,
+        -- hide_root_folder = false,
+      },
+      git = {
+        enable = false,
+        ignore = true,
+      },
+      actions = {
+        open_file = {
+          resize_window = true,
         },
-			},
-		},
+      },
+      renderer = {
+        indent_markers = {
+          enable = true,
+          icons = {
+            corner = "└ ",
+            edge = "│ ",
+            item = "│ ",
+            none = "  ",
+          },
+        },
+        icons = {
+          webdev_colors = true,
+          git_placement = "after",
+          show = {
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+          },
+          padding = " ",
+        },
+      },
+    },
   },
 
   {
     "akinsho/bufferline.nvim",
     opts = {
       options = {
-      	max_name_length = 20,
-		  	max_prefix_length = 13,
-		  	tab_size = 20,
-		  	color_icons = true,
-		  	show_buffer_icons = true,
-		  	show_buffer_close_icons = true,
-			  show_close_icon = true,
-			  show_tab_indicators = true,
-			  enforce_regular_tabs = false,
-			  persist_buffer_sort = true,
-			  always_show_bufferline = true,
-			  separator_style = "thin",
+        max_name_length = 20,
+        max_prefix_length = 13,
+        tab_size = 20,
+        color_icons = true,
+        show_buffer_icons = true,
+        show_buffer_close_icons = true,
+        show_close_icon = true,
+        show_tab_indicators = true,
+        enforce_regular_tabs = false,
+        persist_buffer_sort = true,
+        always_show_bufferline = true,
+        separator_style = "thin",
         offsets = {
-				  {
-					  filetype = "NvimTree",
-					  text = "File Explorer",
-					  text_align = "center",
-					  padding = 0,
-				  },
-			  },
+          {
+            filetype = "NvimTree",
+            text = "File Explorer",
+            text_align = "center",
+            padding = 0,
+          },
+        },
       },
     },
   },
@@ -314,7 +314,7 @@ require('lazy').setup({
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
+  require 'kickstart.plugins.autoformat',
   -- require 'kickstart.plugins.debug',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
